@@ -23,3 +23,11 @@ class AnwserCreate(generic.CreateView):
     def get(self, request, pk, *args, **kwargs):
         form = ChoiceForm(initial={'question': pk})
         return render(request, 'Topics/quick_poll.html', {'form': form})
+
+
+
+class TestCreate(generic.CreateView):
+    model = Test
+    form_class = TestForm
+    success_url  = reverse_lazy('medical')
+    template_name = 'Medical/medical.html'

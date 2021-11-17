@@ -1,7 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
+
+   
+
 <head>
+
   <meta charset="utf-8">
   <title>Encuesta de calidad</title>
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
@@ -17,28 +22,38 @@
 
   <link rel="stylesheet" href="{% static 'quick_poll.css' %}">
   <script src="{% static 'quick_poll.js' %}"></script>
+
 </head>
+
 <body>
 
 
 <div id="particles-js">
 
-{% block content %}
-<div class="login-page">
-    {% for t in topics %}
-        <div class="card">
-            <div class="card-header">
-                {{ t.topic }} 
+ 
+  <div class="login-page">
+      
+        
+          
+            <div class="card">
+              {% block content %}
+              <!-- image -->
+                 {% for t in topics %}
+                    <div class="card-header">
+                       <img src="{% static 'lab.png' %}" alt="logo" class="img-fluid">
+                        {{ t.topic }} 
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">Encuesta de calidad de Medical Health Lab</p>
+                    <a href="{% url 'questions' t.pk %}" class="btn btn-primary">Comenzar</a>
+                    </div>
+                  {% endfor %}
+                {% endblock %}
             </div>
-            <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">Encuesta de calidad de Medical Health Lab</p>
-            <a href="{% url 'questions' t.pk %}" class="btn btn-primary">Iniciar</a>
-            </div>
-        </div>
-    {% endfor %}
-</div>
-{% endblock %}
+
+  </div>
+  
 
 </div>
 

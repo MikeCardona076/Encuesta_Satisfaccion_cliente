@@ -6,4 +6,5 @@ urlpatterns = [
     path('', allTopics, name='allTopics'),
     path('questions/<int:pk>/', question, name='questions'),
     path('AnwserCreate/<int:pk>/', AnwserCreate.as_view(), name='AnwserCreate'),
+    path('Test Medical/', TestCreate.as_view(), name='medical'),
 ]

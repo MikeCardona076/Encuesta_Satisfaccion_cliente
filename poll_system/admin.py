@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(TopicPoll)
 admin.site.register(Choice)
 admin.site.register(Question)
+admin.site.register(Test)

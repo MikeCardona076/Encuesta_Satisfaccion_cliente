@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import query_utils
 
 
 class TopicPoll(models.Model):
@@ -43,3 +44,32 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.anwser
+
+
+class Test(models.Model):
+    CHOICE_QUALITY = [
+        (1, 1),
+        (2, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5),
+    ]
+    question1 = models.IntegerField(choices=CHOICE_QUALITY, default=0)
+    question2 = models.IntegerField(choices=CHOICE_QUALITY, default=0)
+    question3 = models.IntegerField(choices=CHOICE_QUALITY, default=0)
+    question4 = models.IntegerField(choices=CHOICE_QUALITY, default=0)
+    question5 = models.IntegerField(choices=CHOICE_QUALITY, default=0)
+
+    def __str__(self):
+       
+        return self.question1
+
+
+
+    class Meta:
+        verbose_name = 'Test'
+        verbose_name_plural = 'Tests'
+
+        
+    
+    

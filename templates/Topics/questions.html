@@ -1,20 +1,19 @@
 {% extends 'Topics/index.html' %}
 
 
-
-
-
-
 {% block content %}
-{% for question in questions  %}
-<div class="card">
-    <div class="card-header">
-        {{ question.question  }} 
-    </div>
-    <div class="card-body">
-    <a href="{% url 'AnwserCreate' question.pk %}">Anwser</a>
-    </div>
-</div>
-{% endfor %}
 
-{% endblock %}
+<div class="container">
+    {% for question in questions  %}
+        <div class="card-header">
+            {{ question.question  }} 
+        </div>
+        <div class="card-body">
+        <a href="{% url 'AnwserCreate' question.pk %}">Responder</a>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
+
