@@ -17,8 +17,9 @@ class Test(models.Model):
     question7 = models.IntegerField(choices=CHOICE_QUALITY)
     sexo = models.CharField(max_length=10)
     edad = models.IntegerField()
-    option1 = models.CharField(max_length=100)
-    option2 = models.CharField(max_length=200)
+    option1 = models.CharField(max_length=100 
+    , blank=True, null=True)
+    option2 = models.CharField(max_length=200, blank=True, null=True)
 
 
     def __str__(self):

@@ -31,7 +31,9 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 OWN_APPS = [
-    'poll_system'
+    'poll_system',
+    'import_export',
+    
 ]
 
 INSTALLED_APPS = [
@@ -123,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[  BASE_DIR / 'static' ]
+STATICFILES_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
